@@ -6,7 +6,7 @@
 ![Project Badge](https://img.shields.io/badge/Status-Prototype_Complete-success)![Platform](https://img.shields.io/badge/Platform-Android_Edge-green)![AI Models](https://img.shields.io/badge/AI-Gemma_3_1B_%7C_MedSigLIP_%7C_MedASR-blue)
 
 ### 🔗 Official Submission Links
-*   **🎥 [Watch the 3-Minute Demo Video Here](https://drive.google.com/file/d/1OCYVyPv4xiclwgFENqZe1GKJV6mjcd-1/view?usp=drive_link)**
+*   **🎥 [Watch the 3-Minute Demo Video Here]()**
 *   **🕹️ [Try the Live Gradio Web Demo](https://huggingface.co/spaces/smfaisal/medgemma-forensic)**
 *   **💻 [Full Android & Edge Architecture Source Code (GitHub)](https://github.com/smjahid012/medgemma-forensic)**
 
