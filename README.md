@@ -6,24 +6,26 @@
 ![Project Badge](https://img.shields.io/badge/Status-Prototype_Complete-success)![Platform](https://img.shields.io/badge/Platform-Android_Edge-green)![AI Models](https://img.shields.io/badge/AI-Gemma_3_1B_%7C_MedSigLIP_%7C_MedASR-blue)
 
 ### 🔗 Official Submission Links
-*   **🎥 [Watch the 3-Minute Demo Video Here](https://www.youtube.com/watch?v=6BD-0pbSqtA)**
+*   **🎥 [Watch the 1-Minute Overview Here](https://www.youtube.com/watch?v=70MFbYzqVho)**
+*   **🎥 [Watch the 2-Minute Worker Node Here](https://www.youtube.com/watch?v=qNRboKAnfrs)**
+*   **🎥 [Watch the 3-Minute Mesh Network AI Pipeline Here](https://www.youtube.com/watch?v=GGymf9JfSEI)**
 *   **🕹️ [Try the Live Gradio Web Demo](https://huggingface.co/spaces/smfaisal/medgemma-forensic)**
-*   **💻 [Full Android & Edge Architecture Source Code (GitHub)](https://github.com/smjahid012/medgemma-forensic)**
+*   **💻 [Android & Edge Architecture Source Code (GitHub)](https://github.com/smjahid012/medgemma-forensic)**
 
 ---
 
 ## 🌍 The Mission
 In the "Last Mile" of healthcare—conflict zones, remote villages, and disaster sites—the internet is a luxury that doctors cannot afford. Disease moves faster than data.
 
-**MedGemma FORENSIC** is a **Self-Contained Artificial Intelligence System** engineered to operate in invalid zero-connectivity environments. I move intelligence from the Cloud to the Edge, empowering frontline workers to detect invisible outbreaks before they become pandemics.
+**MedGemma FORENSIC** is a **Self-Contained Artificial Intelligence System** engineered to operate in zero-connectivity environments. I move intelligence from the Cloud to the Edge, empowering frontline workers to detect invisible outbreaks before they become pandemics.
 
 ---
 
-## 🚀 The Engineering Breakthrough: "The Impossible Stack"
+## 🚀 The Engineering Breakthrough: "The Impossible Stack."
 
 Running a single AI model on a phone is standard. Running a **Multimodal Diagnostic Suite** (LLM + Vision + Audio + Anomaly Detection) on a consumer Android device ($200, 4GB RAM) was considered impossible.
 
-**I solved the "4GB Memory Paradox".**
+**I solved the "Memory Paradox".**
 
 My architecture orchestrates **4.3GB of Quantized AI Models** into a 3.5GB RAM envelope using a custom-built **Sequential Lifecycle Manager ("The Traffic Cop")**.
 
@@ -32,7 +34,7 @@ My architecture orchestrates **4.3GB of Quantized AI Models** into a 3.5GB RAM e
 | **🧠 The Brain** | **Gemma 3 1B** (LiteRT) | Clinical Reasoning | **Zero-Latency Design:** *I prioritize stability. While MedGemma 1.5 4B is supported, I default to Gemma 3 1B to avoid Decoder KV Cache memory spikes on low-end hardware.* |
 | **👁️ The Eye** | **MedSigLIP** (Google Research) | Visual Forensics | **Custom TFLite Conversion:** *I manually converted Google's SigLIP to TFLite and implemented a `LOGIT_SCALE=100.0f` scalar in the Android pipeline to restore sensitivity for "necrotic" patterns.* |
 | **👂 The Ear** | **MedASR** (Sherpa ONNX) | Verbal Autopsy | **Raw Audio Pipeline:** *Direct MediaCodec decoding (M4A/WAV -> PCM FloatArray) for studio-quality transcription in the field.* |
-| **📉 Pattern Hunter** | **Probabilistic Engine** | Outbreak Detection | **Forensic Bridge:** *Maps 60+ visual findings to a 25-dim epidemiological vector.* |
+| **📉 Pattern Hunter** | **Probabilistic Engine** | Outbreak Detection | **Forensic Bridge:** *Maps 60+ but currently 25 visual findings to a 25-dim epidemiological vector.* |
 | **🕸️ Nervous System** | **P2P Mesh Network** | Offline Sync | **Worker-Anchor Protocol:** *Secure, manual handshake to transfer `CaseFile` protobufs without internet.* |
 
 ```
@@ -56,7 +58,7 @@ medgemma-forensic/                        ← GitHub Repo Root
     ├── 📄 MedSigLIPManager.kt             ← Proves the Logit Scale & L2 Normalization math
     ├── 📄 MedASRManager.kt                ← Proves the raw audio pipeline engineering
     ├── 📄 SentencePieceTokenizer.kt       ← Proves tokenizer built from scratch
-    ├── 📄 DiseaseToSymptomMapper.kt       ← Proves the 25-dimensional "Rosetta Stone"
+    ├── 📄 DiseaseToSymptomMapper.kt       ← Proves the 25-dimensional "Rosetta Stone."
     └── 📄 AnomalyEngine.kt                ← Proves the local Epidemic Pattern matching
 ```
 
@@ -69,16 +71,16 @@ I respect the hierarchy of field medicine. Not every phone needs to be a superco
 *   **Role:** Usage-focused, Battery-conscious.
 *   **Action:** Captures Evidence (Photo + Audio + Vitals).
 *   **AI Task:** 
-    *   Runs **MedSigLIP** to categorize the lesion.
+    *   Runs only to capture the visual Evidence.
     *   Runs **MedASR** to transcribe the patient history.
     *   **Does NOT** run heavy reasoning. It packages data into a `CaseFile.proto` (highly compressed semantic data).
 *   **Transfer:** Initiates a **Secure Handshake** (Manual WiFi Direct/BLE) to offload data to the Anchor.
 
-### 2. ⚓ The Anchor Node (Command Center)
+### 2. ⚓ The Anchor Node (Command Center Syndromic Surveillance Hub)
 *   **Role:** Analysis-focused, plugged-in (or high battery).
 *   **Action:** Receives `CaseFile` streams from multiple Workers.
 *   **AI Task:**
-    *   **"The Traffic Cop":** Unloads Listeners -> Loads **Gemma 3 1B**.
+    *   **"The Traffic Cop":** Unloads Listeners -> Loads Unloads **Medsiglip, Medasr, Gemma 3 1B**.
     *   **Reasoning:** Synthesizes the Worker's evidence into a `ForensicReport`.
     *   **Anomaly Engine:** Cross-references the new case with local history to detect **Spatiotemporal Clusters** (e.g., *"3 cases of Necrosis in Village A within 48 hours"*).
 
@@ -92,14 +94,14 @@ To fit 3 Giants (LLM, VLM, ASR) into a small room (RAM), I built strict traffic 
 2.  **State: LOAD_EAR** -> Clean RAM -> Load ASR -> Transcribe -> **UNLOAD**.
 3.  **State: LOAD_BRAIN** -> Clean RAM -> Load LLM -> Reason -> **UNLOAD**.
 
-*Result: I never exceed 3.5GB Peak RAM usage, preventing the Android Low Memory Killer (LMK) from crashing the app during critical fieldwork.*
+*Result: I never exceed 2.8GB Peak RAM usage, preventing the Android Low Memory Killer (LMK) from crashing the app during critical fieldwork.*
 
 ---
 
 ## 🛠️ Tech Stack & Requirements
 
 *   **Language:** Kotlin (Android Native)
-*   **AI Runtime:** Google LiteRT (TensorFlow Lite), ONNX Runtime
+*   **AI Runtime:** Google LiteRT (TensorFlow Lite), ONNX Runtime, TFLite
 *   **Networking:** Android Nearby Connections API (P2P Mesh)
 *   **Build System:** Gradle (Agp 8.2.0)
 *   **Min SDK:** 26 (Android 8.0)
@@ -109,7 +111,7 @@ To fit 3 Giants (LLM, VLM, ASR) into a small room (RAM), I built strict traffic 
 
 ## 🔮 Future Roadmap
 
-*   **Phase 2:** Integrate **MedGemma 4B** via knowledge distillation for high-end Anchor devices (8GB+ RAM).
+*   **Phase 2:** Integrate **MedGemma 4B** via knowledge distillation for high-end Anchor devices.
 *   **Phase 3:** Satellite uplink integration for Anchor nodes to sync with global health ministries.
 
 ---
