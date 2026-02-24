@@ -94,7 +94,7 @@ To fit 3 Giants (LLM, VLM, ASR) into a small room (RAM), I built strict traffic 
 2.  **State: LOAD_EAR** -> Clean RAM -> Load ASR -> Transcribe -> **UNLOAD**.
 3.  **State: LOAD_BRAIN** -> Clean RAM -> Load LLM -> Reason -> **UNLOAD**.
 
-*Result: I never exceed 2.8GB Peak RAM usage, preventing the Android Low Memory Killer (LMK) from crashing the app during critical fieldwork.*
+*Result: I never exceed Peak RAM usage, preventing the Android Low Memory Killer (LMK) from crashing the app during critical fieldwork.*
 
 ---
 
