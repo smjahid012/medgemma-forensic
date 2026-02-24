@@ -6,7 +6,7 @@
 ![Project Badge](https://img.shields.io/badge/Status-Prototype_Complete-success)![Platform](https://img.shields.io/badge/Platform-Android_Edge-green)![AI Models](https://img.shields.io/badge/AI-Gemma_3_1B_%7C_MedSigLIP_%7C_MedASR-blue)
 
 ### 🔗 Official Submission Links
-*   **🎥 [Watch the 3-Minute Demo Video Here]()**
+*   **🎥 [Watch the 3-Minute Demo Video Here](https://www.youtube.com/watch?v=6BD-0pbSqtA)**
 *   **🕹️ [Try the Live Gradio Web Demo](https://huggingface.co/spaces/smfaisal/medgemma-forensic)**
 *   **💻 [Full Android & Edge Architecture Source Code (GitHub)](https://github.com/smjahid012/medgemma-forensic)**
 
@@ -129,4 +129,4 @@ This project is licensed under the Apache License 2.0, which permits open-source
 
 **MedGemma Impact Challenge Commitment:** If MedGemma Forensic is selected as a winning submission, I formally agree to re-license the original application code under Creative Commons Attribution 4.0 International (CC BY 4.0) as required by competition rules.
 
-**Note:** Integrated model weights including MedSigLIP, Gemma 3, and MedASR base models remain subject to their respective Google HAI-DEF and original upstream licenses and are exempt from this re-licensing commitment per competition rules Section 2.5.
+**Note:** Integrated model weights, including MedSigLIP, Gemma 3, and MedASR base models, remain subject to their respective Google HAI-DEF and original upstream licenses and are exempt from this re-licensing commitment per competition rules Section 2.5.
