@@ -27,7 +27,7 @@ Running a single AI model on a phone is standard. Running a **Multimodal Diagnos
 
 **I solved the "Memory Paradox".**
 
-My architecture orchestrates **4.3GB of Quantized AI Models** into a 3.5GB RAM envelope using a custom-built **Sequential Lifecycle Manager ("The Traffic Cop")**.
+My architecture orchestrates ~4.3 GB of model weights (MedSigLIP Vision + Text, MedASR, Gemma 3 1B) serially, keeping peak live native heap at ~417 MB — confirmed by Android Studio Profiler.
 
 | Component | Model / Tech | Role | Innovation |
 | :--- | :--- | :--- | :--- |
